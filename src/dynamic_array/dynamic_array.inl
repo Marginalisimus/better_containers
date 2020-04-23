@@ -159,14 +159,14 @@ bool operator>=(const dynamic_array<T>& reference, const dynamic_array<T>& other
 
 template <class T>
 typename dynamic_array<T>::value_type& dynamic_array<T>::operator[](const index_type& index) {
-	if (check_index(index) == true) return arr[index];
-	ASSUME_UNREACHABLE();
+	check_index(index);
+	return arr[index];
 }
 
 template <class T>
 const typename dynamic_array<T>::value_type& dynamic_array<T>::operator[](const index_type& index) const {
-	if (check_index(index) == true) return arr[index];
-	ASSUME_UNREACHABLE();
+	check_index(index);
+	return arr[index];
 }
 
 template <class T>
