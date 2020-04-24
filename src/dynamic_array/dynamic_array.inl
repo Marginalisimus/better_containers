@@ -1,7 +1,6 @@
 #pragma once
 #include "dynamic_array.hpp"
 #include "../string/string.hpp"
-#include "../ASSUME_UNREACHABLE.hpp"
 
 namespace bc {
 //-------------------------
@@ -392,7 +391,7 @@ typename dynamic_array<T>::index_type dynamic_array<T>::find(value_type element)
 		if (arr[i] == element) return i;
 	}
 
-	return -1;
+	return 0;
 }
 //-------------------------
 }//////////////namespace bc
