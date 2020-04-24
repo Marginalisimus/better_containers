@@ -8,8 +8,8 @@ namespace bc {
 template<class T>
 class linked_list {
 private:
-	std::size_t m_size;
 	node<T>* head;//beginning
+	std::size_t m_size;
 
 public:
 	using iterator = l_iterator<T>;

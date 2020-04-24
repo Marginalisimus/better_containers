@@ -176,7 +176,7 @@ inline linked_list<T>::linked_list() :
 template<class T>
 inline linked_list<T>::~linked_list() {
 	node<T>* iter = head;
-	for (int i = 0; i < size(); ++i) {
+	for (size_t i = 0; i < size(); ++i) {
 		node<T>* temp = iter->next;
 		delete iter;
 		iter = temp;

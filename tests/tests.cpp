@@ -4,10 +4,11 @@
 #include <vector/vector.hpp>
 #include <string/string.hpp>
 #include <linked_list/linked_list.hpp>
+#include <doubly_linked_list/linked_list.hpp>
 
 
 //dynamic_array tests
-TEST(Unit, addTest) {
+TEST(Unit, dynamicAddTest) {
 	bc::dynamic_array<int> subject{};
 
     subject.add(1);
@@ -17,7 +18,7 @@ TEST(Unit, addTest) {
 }
 
 
-TEST(Unit, popTest) {
+TEST(Unit, dynamicPopTest) {
     bc::dynamic_array<int> subject{};
 
     subject.add(1);
@@ -26,7 +27,7 @@ TEST(Unit, popTest) {
 	EXPECT_EQ (subject.size(), 0);
 }
 
-TEST(Unit, removeTest) {
+TEST(Unit, dynamicRemoveTest) {
     bc::dynamic_array<int> subject{};
 
     subject.add(1);
@@ -39,7 +40,7 @@ TEST(Unit, removeTest) {
     EXPECT_EQ (subject[1], 3);
 }
 
-TEST(Unit, sort) {
+TEST(Unit, dynamicSortTest) {
     bc::dynamic_array<int> subject{};
 
     subject.add(11);
@@ -52,6 +53,43 @@ TEST(Unit, sort) {
     EXPECT_EQ (subject[1], 6);
     EXPECT_EQ (subject[2], 11);
 }
-
-
 //-------------------
+
+//string tests
+TEST(Unit, stringAddTest) {
+	bc::string subject{};
+
+    subject.add('H');
+
+	EXPECT_EQ (subject[0], 'H');
+	EXPECT_EQ (subject.size(), 1);
+}
+//-----------------
+
+//vector tests
+TEST(Unit, vectorLengthTest) {
+	bc::vector subject(3,4);
+
+	EXPECT_EQ (subject.length(), 5);
+}
+//-----------------
+
+//doulby_linked_list tests
+//TEST(Unit, doublyLinkedListAddTest) {
+	//bc::d_linked_list<int> subject{};
+   // subject.add_last(3);
+
+	//EXPECT_EQ(*subject.begin(), 3);
+   // EXPECT_EQ(subject.size(), 1);
+//}
+//-------------------
+
+//linked_list tests
+TEST(Unit, linkedListAddTest) {
+	bc::linked_list<int> subject{};
+    subject.add(3);
+
+	EXPECT_EQ(*subject.begin(), 3);
+    EXPECT_EQ(subject.size(), 1);
+}
+//--------------------

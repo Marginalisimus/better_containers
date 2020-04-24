@@ -2,9 +2,9 @@
 #include <iostream>
 #include <cstddef>
 #include <iterator>
-#include "d_node.hpp"
-#include "dl_iterator.hpp"
-#include "const_dl_iterator.hpp"
+#include "node.hpp"
+#include "iterator.hpp"
+#include "const_iterator.hpp"
 
 namespace bc {
 //-------------------------
@@ -75,4 +75,4 @@ std::ostream& operator<<(std::ostream& os, const d_linked_list<T>& list){
 }
 //-------------------------
 }//////////////namespace bc
-#include "d_linked_list.inl"
+#include "linked_list.inl"

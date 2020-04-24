@@ -3,14 +3,13 @@
 #include <vector/vector.hpp>
 #include <string/string.hpp>
 #include <linked_list/linked_list.hpp>
+#include <doubly_linked_list/linked_list.hpp>
 
 
 int main() {
-	bc::dynamic_array<int> subject{};
+	bc::d_linked_list<int> subject{};
+    	subject.add_last(3);
 
-	for(int i = 0; i < 6; ++i){
-		subject.add(i);
-	}
-	
-    std::cout << subject << std::endl;
+
+    	std::cout << *subject.begin() << std::endl << subject.size() << std::endl;
 }

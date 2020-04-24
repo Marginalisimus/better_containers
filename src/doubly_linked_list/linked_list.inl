@@ -1,7 +1,8 @@
 #pragma once
-#include "d_linked_list.hpp"
-#include "dl_iterator.hpp"
+#include "linked_list.hpp"
+#include "iterator.hpp"
 #include <cassert>
+#include <iostream>
 
 namespace bc {
 //-------------------------
@@ -17,23 +18,13 @@ inline void d_linked_list<T>::add_first(T val) {
 
 template<class T>
 inline void d_linked_list<T>::add(T val, iterator it) {
-	if (m_size == 0) {
-		m_head.next = new d_node<T>(val);
-		m_head.next->next = &m_tail;
-		m_tail.prev = m_head.next;
-	}
-	else {
-		d_node<T>* temp = new d_node<T>(val);
+	d_node<T>* temp = new d_node<T>(val);
 
-		d_node<T>* i = it.ptr;
-		if(i->prev == nullptr)i->prev = &m_head;
-		
-		temp->next = i;
-		temp->prev = i->prev;
-		i->prev->next = temp;
-		i->prev = temp;
+	it.ptr->prev->next = temp;
+	temp->prev = it.ptr->prev;
+	temp->next = it.ptr;
+	it.ptr->prev = temp;
 
-	}
 	++m_size;
 }
 
@@ -74,7 +65,7 @@ inline T& d_linked_list<T>::back() {
 }
 
 template<class T>
-inline size_t d_linked_list<T>::size() const {
+inline std::size_t d_linked_list<T>::size() const {
 	return m_size;
 }
 

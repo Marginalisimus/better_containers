@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include "dynamic_array.hpp"
+
 
 namespace bc {
 //-------------------------
