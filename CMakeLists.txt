@@ -53,14 +53,11 @@ install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/src"
 configure_and_install(${CMAKE_SCRIPTS_ROOT}/simple-config.cmake.in ${namespace} SameMajorVersion)
 
 # Examples =============================================================================================================
-add_executable(example)
-target_sources(example PRIVATE "examples/example1.cpp")
-target_link_libraries(example PRIVATE ${namespace}::${target_name})
+add_executable(${target_name}_example)
+target_sources(${target_name}_example PRIVATE "examples/example1.cpp")
+target_link_libraries(${target_name}_example PRIVATE ${namespace}::${target_name})
 
 # Tests ================================================================================================================
-enable_testing()
-# check if conan installed a test framework
-#conan_check_testing(gtest)
 
 # unit tests
 file(GLOB_RECURSE sources CONFIGURE_DEPENDS
@@ -68,14 +65,11 @@ file(GLOB_RECURSE sources CONFIGURE_DEPENDS
 	"tests/*.cpp"
 )
 
-add_executable(tests)
-target_sources(tests PRIVATE ${sources})
+add_executable(${target_name}_tests)
+target_sources(${target_name}_tests PRIVATE ${sources})
 
-target_link_libraries(tests
+target_link_libraries(${target_name}_tests
     PRIVATE
 		${namespace}::${target_name}
         CONAN_PKG::gtest
 )
-
-include(GoogleTest)
-gtest_discover_tests(tests)

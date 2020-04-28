@@ -77,7 +77,7 @@ inline void linked_list<T>::remove(size_t index) {
 
 	node<T>* iter = head;
 	node<T>* previous = iter;
-	for (int i = 0; i < index; ++i) {
+	for (std::size_t i = 0; i < index; ++i) {
 		previous = iter;
 		iter = iter->next;
 	}

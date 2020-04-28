@@ -29,5 +29,3 @@ class Project(ConanFile):
         cmake.definitions["CMAKE_EXPORT_COMPILE_COMMANDS"] = True
         cmake.configure()
         cmake.build()
-
-        self.run("ctest -VV -C %s" % cmake.build_type, run_environment=True)

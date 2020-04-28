@@ -26,7 +26,6 @@ inline void d_linked_list<T>::add(T val, iterator it) {
 	it.ptr->prev = temp;
 
 	++m_size;
-	std::cout << "successful" << std::endl;
 }
 
 template<class T>
