@@ -26,18 +26,17 @@ inline void d_linked_list<T>::add(T val, iterator it) {
 	it.ptr->prev = temp;
 
 	++m_size;
+	std::cout << "successful" << std::endl;
 }
 
 template<class T>
 inline void d_linked_list<T>::remove_last() {
-	auto it = end();
-	return remove(it);
+	remove(--end());
 }
 
 template<class T>
 inline void d_linked_list<T>::remove_first() {
-	auto it = begin();
-	return remove(it);
+	remove(begin());
 }
 
 template<class T>
@@ -51,7 +50,7 @@ inline void d_linked_list<T>::remove(iterator it) {
 
 template<class T>
 inline void d_linked_list<T>::clear() {
-	for (std::size_t i = 0; i < m_size; ++i) remove_last();
+	while(!(empty())) remove_last();
 }
 
 template<class T>

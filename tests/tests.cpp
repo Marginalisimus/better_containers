@@ -75,13 +75,13 @@ TEST(Unit, vectorLengthTest) {
 //-----------------
 
 //doulby_linked_list tests
-//TEST(Unit, doublyLinkedListAddTest) {
-	//bc::d_linked_list<int> subject{};
-   // subject.add_last(3);
+TEST(Unit, doublyLinkedListAddTest) {
+    bc::d_linked_list<int> subject{};
+    subject.add_last(3);
 
-	//EXPECT_EQ(*subject.begin(), 3);
-   // EXPECT_EQ(subject.size(), 1);
-//}
+	EXPECT_EQ(*subject.begin(), 3);
+    EXPECT_EQ(subject.size(), 1);
+}
 //-------------------
 
 //linked_list tests
