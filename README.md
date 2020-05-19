@@ -32,15 +32,15 @@ provides you with array whatever type and changeable size
 ```C++
 void add(value_type element);
 ```
-    adds an element to the end of the array
+* adds an element to the end of the array
 ```C++
 void pop();
 ```
-    removes last element
+* removes last element
 ```C++
 void remove(index_type index);
 ```
-    removes element at index
+* removes element at index
  ```C++
 void remove(index_type index);
 ```   
