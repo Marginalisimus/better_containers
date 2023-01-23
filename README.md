@@ -25,28 +25,3 @@ conan install . -if build -e CONAN_RUN_TESTS=True -b outdated && conan build . -
 #include <string/string.hpp>
 ```
 4. Read documentaion or if there is no documentation try to guess. Enjoy!
-
-dynamic_array
-provides you with array whatever type and changeable size
-
-```C++
-void add(value_type element);
-```
-* adds an element to the end of the array
-```C++
-void pop();
-```
-* removes last element
-```C++
-void remove(index_type index);
-```
-* removes element at index
- ```C++
-void remove(index_type index);
-```   
- 
-  
-  
-
-
-
